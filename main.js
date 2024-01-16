@@ -1,5 +1,5 @@
 
-/// Byter mellan log in och register pages
+/// Byter mellan log in och register pages ///
 document.querySelector("#frontPage").addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -22,14 +22,14 @@ document.querySelector("#frontPage").addEventListener("click", (event) => {
     };
 });
 
-/// Övergår till main page. Måste ändras till submit senare
+/// Övergår till main page /// Måste ändras till submit senare ///
 document.querySelector("#logInForm").addEventListener("click", (event) => {
     event.preventDefault();
 
     const mainPage = document.querySelector("#main");
     const navBar = document.querySelector("nav");
     const frontPage = document.querySelector("#frontPage");
-
+    const webName = document.querySelector("#webName");
 
     if (event.target.id == "logInButton") {
         frontPage.classList.add("hide");
