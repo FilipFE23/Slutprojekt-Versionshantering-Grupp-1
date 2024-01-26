@@ -226,3 +226,52 @@ document.querySelector("#closeBtn").addEventListener("click", (event) => {
   popUpBack.style.display = "none";
   contactForm.reset();
 });
+
+
+//Andres Mr Spy wathing you
+function getRandomPosition() {
+  const screenHeight = window.innerHeight;
+  const screenWidth = window.innerWidth;
+
+  const randomX = Math.floor(Math.random() * (screenWidth - 200));
+  const randomY = Math.floor(Math.random() * (screenHeight - 200));
+
+  return { x: randomX, y: randomY };
+}
+
+function showImage() {
+  const spyImage = document.createElement("img");
+  spyImage.src = "./Images/1085386-200.png";
+  spyImage.alt = "Mr Spy";
+  spyImage.classList.add("spyImage");
+
+  //alternative-version
+  /*spyImage.src = "./Images/1085385-200.png";
+  spyImage.alt = "Mr Spy";
+  spyImage.classList.add("spyImage");*/
+
+  const randomPosition = getRandomPosition();
+  spyImage.style.left = randomPosition.x + "px";
+  spyImage.style.top = randomPosition.y + "px";
+
+  document.body.appendChild(spyImage);
+
+  setTimeout(() => {
+    spyImage.style.opacity = 1;
+  }, 0);
+
+  setTimeout(() => {
+    hideImage(spyImage);
+  }, 1000);
+}
+
+function hideImage(imageElement) {
+  imageElement.style.opacity = 0;
+  setTimeout(() => {
+    document.body.removeChild(imageElement);
+    showImage();
+  }, 5000);
+}
+
+showImage();
+//Slut på kod
